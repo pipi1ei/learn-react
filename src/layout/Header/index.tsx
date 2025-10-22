@@ -1,5 +1,23 @@
-import { Breadcrumb } from 'antd';
+import { Button } from 'antd';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import type { Dispatch, SetStateAction } from 'react';
 
-export default function Header() {
-  return <Breadcrumb items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]} />;
+interface HeaderProps {
+  collapsed: boolean;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Header({ collapsed, setCollapsed }: HeaderProps) {
+  return (
+    <Button
+      type="text"
+      icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      onClick={() => setCollapsed(!collapsed)}
+      style={{
+        fontSize: '16px',
+        width: 64,
+        height: 64,
+      }}
+    />
+  );
 }

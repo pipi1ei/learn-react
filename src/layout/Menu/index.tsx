@@ -20,8 +20,7 @@ export default function Menu() {
   const navigate = useNavigate();
   const handleMenuClick: MenuProps['onClick'] = info => {
     const path = [...info.keyPath].reverse().join('/');
-    const { key } = info;
-    setCurrent(key);
+    setCurrent(info.key);
     navigate(path);
   };
 

@@ -1,8 +1,8 @@
 import type { RouteObject } from 'react-router';
 import type { MenuProps } from 'antd';
 import { BorderlessTableOutlined, AppstoreOutlined } from '@ant-design/icons';
-import Home from '../views/home/Home';
-import About from '../views/about/About';
+import Home from '../views/Home';
+import TicTacToe from '../views/TicTacToe';
 import LearnComponent from '@/views/LearnComponent';
 import Base from '@/views/LearnComponent/views/Base';
 import Communication from '@/views/LearnComponent/views/Communication';
@@ -25,7 +25,7 @@ export const layoutRouterConfig: LayoutRouterConfig[] = [
     key: 'tic-tac-toe',
     label: '井字棋',
     icon: <BorderlessTableOutlined />,
-    Component: About,
+    Component: TicTacToe,
   },
   {
     key: 'component',
