@@ -29,6 +29,9 @@ importers:
       react-router:
         specifier: ^7.9.4
         version: 7.9.4(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      zustand:
+        specifier: ^5.0.8
+        version: 5.0.8(@types/react@19.1.15)(react@19.1.1)
     devDependencies:
       '@eslint/js':
         specifier: ^9.36.0
@@ -36,6 +39,9 @@ importers:
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
+      '@types/node':
+        specifier: ^24.9.1
+        version: 24.9.1
       '@types/react':
         specifier: ^19.1.13
         version: 19.1.15
@@ -47,7 +53,7 @@ importers:
         version: 66.5.2
       '@vitejs/plugin-react':
         specifier: ^5.0.3
-        version: 5.0.4(vite@7.1.7(jiti@2.6.0))
+        version: 5.0.4(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))
       eslint:
         specifier: ^9.36.0
         version: 9.36.0(jiti@2.6.0)
@@ -68,10 +74,10 @@ importers:
         version: 8.44.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.8.3)
       unocss:
         specifier: ^66.5.2
-        version: 66.5.2(postcss@8.5.6)(vite@7.1.7(jiti@2.6.0))
+        version: 66.5.2(postcss@8.5.6)(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))
       vite:
         specifier: ^7.1.7
-        version: 7.1.7(jiti@2.6.0)
+        version: 7.1.7(@types/node@24.9.1)(jiti@2.6.0)
 
 packages:
 
@@ -674,6 +680,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/node@24.9.1':
+    resolution: {integrity: sha512-QoiaXANRkSXK6p0Duvt56W208du4P9Uye9hWLWgGMDTEoKPhuenzNcC4vGUmrNkiOKTlIrBoyNQYNpSwfEZXSg==}
 
   '@types/react-dom@19.1.9':
     resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
@@ -1733,6 +1742,9 @@ packages:
   unconfig@7.3.3:
     resolution: {integrity: sha512-QCkQoOnJF8L107gxfHL0uavn7WD9b3dpBcFX6HtfQYmjw2YzWxGuFQ0N0J6tE9oguCBJn9KOvfqYDCMPHIZrBA==}
 
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
   unocss@66.5.2:
     resolution: {integrity: sha512-GCFq6ilalDE33dbjZKgeBHgKGLL/t87XM5sS0aqhD0RgzHhbT2f6Jtsmmg2Q3GASlk5uvJLxh9ifUvPQ13BdyQ==}
     engines: {node: '>=14'}
@@ -1816,6 +1828,24 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zustand@5.0.8:
+    resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -2365,6 +2395,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/node@24.9.1':
+    dependencies:
+      undici-types: 7.16.0
+
   '@types/react-dom@19.1.9(@types/react@19.1.15)':
     dependencies:
       '@types/react': 19.1.15
@@ -2466,13 +2500,13 @@ snapshots:
       '@typescript-eslint/types': 8.44.1
       eslint-visitor-keys: 4.2.1
 
-  '@unocss/astro@66.5.2(vite@7.1.7(jiti@2.6.0))':
+  '@unocss/astro@66.5.2(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))':
     dependencies:
       '@unocss/core': 66.5.2
       '@unocss/reset': 66.5.2
-      '@unocss/vite': 66.5.2(vite@7.1.7(jiti@2.6.0))
+      '@unocss/vite': 66.5.2(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))
     optionalDependencies:
-      vite: 7.1.7(jiti@2.6.0)
+      vite: 7.1.7(@types/node@24.9.1)(jiti@2.6.0)
 
   '@unocss/cli@66.5.2':
     dependencies:
@@ -2604,7 +2638,7 @@ snapshots:
     dependencies:
       '@unocss/core': 66.5.2
 
-  '@unocss/vite@66.5.2(vite@7.1.7(jiti@2.6.0))':
+  '@unocss/vite@66.5.2(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))':
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@unocss/config': 66.5.2
@@ -2615,9 +2649,9 @@ snapshots:
       pathe: 2.0.3
       tinyglobby: 0.2.15
       unplugin-utils: 0.3.0
-      vite: 7.1.7(jiti@2.6.0)
+      vite: 7.1.7(@types/node@24.9.1)(jiti@2.6.0)
 
-  '@vitejs/plugin-react@5.0.4(vite@7.1.7(jiti@2.6.0))':
+  '@vitejs/plugin-react@5.0.4(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.4)
@@ -2625,7 +2659,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.38
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.1.7(jiti@2.6.0)
+      vite: 7.1.7(@types/node@24.9.1)(jiti@2.6.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3649,9 +3683,11 @@ snapshots:
       jiti: 2.6.0
       quansync: 0.2.11
 
-  unocss@66.5.2(postcss@8.5.6)(vite@7.1.7(jiti@2.6.0)):
+  undici-types@7.16.0: {}
+
+  unocss@66.5.2(postcss@8.5.6)(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0)):
     dependencies:
-      '@unocss/astro': 66.5.2(vite@7.1.7(jiti@2.6.0))
+      '@unocss/astro': 66.5.2(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))
       '@unocss/cli': 66.5.2
       '@unocss/core': 66.5.2
       '@unocss/postcss': 66.5.2(postcss@8.5.6)
@@ -3669,9 +3705,9 @@ snapshots:
       '@unocss/transformer-compile-class': 66.5.2
       '@unocss/transformer-directives': 66.5.2
       '@unocss/transformer-variant-group': 66.5.2
-      '@unocss/vite': 66.5.2(vite@7.1.7(jiti@2.6.0))
+      '@unocss/vite': 66.5.2(vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0))
     optionalDependencies:
-      vite: 7.1.7(jiti@2.6.0)
+      vite: 7.1.7(@types/node@24.9.1)(jiti@2.6.0)
     transitivePeerDependencies:
       - postcss
       - supports-color
@@ -3691,7 +3727,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite@7.1.7(jiti@2.6.0):
+  vite@7.1.7(@types/node@24.9.1)(jiti@2.6.0):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -3700,6 +3736,7 @@ snapshots:
       rollup: 4.52.3
       tinyglobby: 0.2.15
     optionalDependencies:
+      '@types/node': 24.9.1
       fsevents: 2.3.3
       jiti: 2.6.0
 
@@ -3714,3 +3751,8 @@ snapshots:
   yallist@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zustand@5.0.8(@types/react@19.1.15)(react@19.1.1):
+    optionalDependencies:
+      '@types/react': 19.1.15
+      react: 19.1.1

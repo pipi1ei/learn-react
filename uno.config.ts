@@ -13,6 +13,7 @@ export default defineConfig({
   ],
   shortcuts: {
     section: 'p-4 mb-5 border border-solid border-#444 rounded',
+    'flex-center': 'flex justify-center items-center',
   },
   transformers: [transformerAttributifyJsx()],
 });
