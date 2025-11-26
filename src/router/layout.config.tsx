@@ -3,6 +3,12 @@ import type { MenuProps } from 'antd';
 import { BorderlessTableOutlined, AppstoreOutlined } from '@ant-design/icons';
 import Home from '../views/Home';
 import TicTacToe from '../views/TicTacToe';
+import DescribingUI from '@/views/DescribingUI';
+import State from '@/views/DescribingUI/views/State';
+import Reducer from '@/views/DescribingUI/views/Reducer';
+import Context from '@/views/DescribingUI/views/Context';
+import Ref from '@/views/DescribingUI/views/Ref';
+import Effect from '@/views/DescribingUI/views/Effect';
 import LearnComponent from '@/views/LearnComponent';
 import Base from '@/views/LearnComponent/views/Base';
 import Communication from '@/views/LearnComponent/views/Communication';
@@ -26,6 +32,19 @@ export const layoutRouterConfig: LayoutRouterConfig[] = [
     label: '井字棋',
     icon: <BorderlessTableOutlined />,
     Component: TicTacToe,
+  },
+  {
+    key: 'describing-ui',
+    label: '描述UI',
+    icon: <AppstoreOutlined />,
+    Component: DescribingUI,
+    children: [
+      { key: 'state', label: 'State', Component: State },
+      { key: 'reducer', label: 'Reducer', Component: Reducer },
+      { key: 'context', label: 'Context', Component: Context },
+      { key: 'ref', label: 'Ref', Component: Ref },
+      { key: 'effect', label: 'Effect', Component: Effect },
+    ],
   },
   {
     key: 'component',
